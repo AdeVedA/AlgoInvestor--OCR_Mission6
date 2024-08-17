@@ -3,7 +3,7 @@
 <p align="center">
   <br/>
   <picture> 
-    <img alt="AlgoInvest&Trade logo" src="datas/AlgoInvest&Trade.png" width="491">
+    <img alt="AlgoInvest&Trade logo" src="Datas/AlgoInvest&Trade.png" width="491">
   </picture>
   <br/>
   <br/>
@@ -17,9 +17,9 @@
 
 # <p align="center"> II. Fonctionnalités Principales</p>
 
-**Algorithme BruteForce**: 
+**Algorithme BruteForce**: fonction recursive explorant toutes les combinaisons d'actions possibles. Gourmand en temps, en ressource et non-scalable sur de grandes quantités de données
 
-**Algorithme optimisé**: Type glouton
+**Algorithme optimisé**: Type glouton, fonctionne par tri des actions selon leur rendement à deux ans.
 
 
 # <p align="center"> III. Structure du Code</p>
