@@ -120,7 +120,7 @@ puis :
 
 	git pull https://github.com/AdeVedA/AlgoInvestor--OCR_Mission6 -t main
 
-  #### G - Lancement du programme:
+  #### D - Lancement du programme:
 
 	python3 bruteforce.py
 
