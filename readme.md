@@ -13,18 +13,42 @@
 
 # <p align="center"> I. Description du Projet</p>
 
-à venir
+Il nous a été demandé d'implémenter en python des algorithmes pour la sélection d'actions (avec coût et rendement) dans le but de maximiser le rendement d'un investissement tout en respectant une contrainte de budget de 500€.
+Le but était de comprendre la complexité Big(O) et sa dimension cruciale pour la scalabilité. Nous étions aussi challengés sur la performance de nos résultats en comparaison avec des résultats de référence passés du "client" (challenge ayant motivé le tweaking de notre algorithme optimisé)
 
-# <p align="center"> II. Fonctionnalités Principales</p>
+Le premier algorithme est une solution bruteforce. Il :
 
-**Algorithme BruteForce**: fonction recursive explorant toutes les combinaisons d'actions possibles. Gourmand en temps, en ressource et non-scalable sur de grandes quantités de données
+-lit les données d'un fichier texte fourni (Datas/actions.txt) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
+-génère ensuite toutes les combinaisons possibles d'actions (ou "`shares_pack`") qui respectent la contrainte de budget de 500€ en utilisant la récursivité 
+-compare enfin les rendements et retient la combinaison d'actions ayant le meilleur rendement.
 
-**Algorithme optimisé**: Type glouton, fonctionne par tri des actions selon leur rendement à deux ans.
+Le second algorithme est une solution optimisée de type "algorithme glouton" tweaké pour être optimimal sur les datasets fournis (datasets1 et dataset2, incluant des données érronées pour nécessiter un "cleaning") dont la taille rendait le traitement par bruteforce matériellement impossible (1000 actions...). Il :
+
+-lit les données d'un des fichiers csv fourni (Datas/dataset*.csv) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
+-nettoie le dataset (retire la ligne de titre, les actions au coût ou au rendement ≤ 0).
+-effectue un tri sur la liste en fonction du rendement, un filtrage des actions pour optimiser les résultats, une sélection des actions dans l'ordre du tri et un calcul du rendement du portefeuille d'action.
+
+Alors que la complexité de l'algorithme bruteforce est d'ordre exponentiel de type O(2^n^ * `n`), celle de l'algorithme optimisé est d'ordre linéarithmique de type O(`n` log `n`), assurant sa scalabilité pour le traitement d'un nombre important de données
+
+# <p align="center"> II. Comparatifs de complexité force brute & optimisé</p>
+
+<p align="center">
+    <br/>
+    <picture>
+        <img alt="Comparatif de complexité spatiotemporelle" src="Datas/@_Complexite spatiotemporelle comparative2.png">
+    </picture>
+</p>
 
 
-# <p align="center"> III. Structure du Code</p>
 
+# <p align="center"> III. Comparatif des résultats : solution optimisée / solution "client" (Sienna)</p>
 
+<p align="center">
+    <br/>
+    <picture>
+        <img alt="Comparatif de résultat" src="Datas/Comparaison_Algo_Sienna.png">
+    </picture>
+</p>
 
 ------------------------------------------
 
@@ -133,7 +157,8 @@ les données de vos tournois et joueurs sont toutes sauvegardées en .json dans 
 	racine_projet/
 		├─────datas/
 		├	   ├────dataset1_Python+P7.csv
-		├	   └────dataset2_Python+P7.csv
+		├	   ├────dataset2_Python+P7.csv
+		├	   └────...
 		├─────bruteforce.py
 		└─────optimized.py
 
