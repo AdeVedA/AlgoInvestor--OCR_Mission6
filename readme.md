@@ -28,7 +28,7 @@ Le second algorithme est une solution optimisée de type "algorithme glouton" tw
 - nettoie le dataset (retire la ligne de titre, les actions au coût ou au rendement ≤ 0).
 - effectue un tri sur la liste en fonction du rendement, un filtrage des actions pour optimiser les résultats, une sélection des actions dans l'ordre du tri et un calcul du rendement du portefeuille d'action.
 
-Alors que la complexité de l'algorithme bruteforce est d'ordre exponentiel de type O($2^n * n$), celle de l'algorithme optimisé est d'ordre linéarithmique de type O($n log n$), assurant sa scalabilité pour le traitement d'un nombre important de données
+Alors que la complexité de l'algorithme bruteforce est d'ordre exponentiel de type O($2^n * n$), celle de l'algorithme optimisé est d'ordre linéarithmique de type O($n * log n$), assurant sa scalabilité pour le traitement d'un nombre important de données
 
 # <p align="center"> II. Comparatifs de complexité force brute & optimisé</p>
 
