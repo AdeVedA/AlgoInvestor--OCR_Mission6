@@ -3,7 +3,7 @@
 <p align="center">
   <br/>
   <picture> 
-    <img alt="AlgoInvest&Trade logo" src="Datas/AlgoInvest&Trade.png" width="491">
+    <img alt="AlgoInvest&Trade logo" src="Datas/AlgoInvest&Trade.png" width="127">
   </picture>
   <br/>
   <br/>
@@ -18,15 +18,15 @@ Le but était de comprendre la complexité Big(O) et sa dimension cruciale pour 
 
 Le premier algorithme est une solution bruteforce. Il :
 
--lit les données d'un fichier texte fourni (Datas/actions.txt) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
--génère ensuite toutes les combinaisons possibles d'actions (ou "`shares_pack`") qui respectent la contrainte de budget de 500€ en utilisant la récursivité 
--compare enfin les rendements et retient la combinaison d'actions ayant le meilleur rendement.
+- lit les données d'un fichier texte fourni (Datas/actions.txt) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
+- génère ensuite toutes les combinaisons possibles d'actions (ou "`shares_pack`") qui respectent la contrainte de budget de 500€ en utilisant la récursivité 
+- compare enfin les rendements et retient la combinaison d'actions ayant le meilleur rendement.
 
 Le second algorithme est une solution optimisée de type "algorithme glouton" tweaké pour être optimimal sur les datasets fournis (datasets1 et dataset2, incluant des données érronées pour nécessiter un "cleaning") dont la taille rendait le traitement par bruteforce matériellement impossible (1000 actions...). Il :
 
--lit les données d'un des fichiers csv fourni (Datas/dataset*.csv) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
--nettoie le dataset (retire la ligne de titre, les actions au coût ou au rendement ≤ 0).
--effectue un tri sur la liste en fonction du rendement, un filtrage des actions pour optimiser les résultats, une sélection des actions dans l'ordre du tri et un calcul du rendement du portefeuille d'action.
+- lit les données d'un des fichiers csv fourni (Datas/dataset*.csv) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
+- nettoie le dataset (retire la ligne de titre, les actions au coût ou au rendement ≤ 0).
+- effectue un tri sur la liste en fonction du rendement, un filtrage des actions pour optimiser les résultats, une sélection des actions dans l'ordre du tri et un calcul du rendement du portefeuille d'action.
 
 Alors que la complexité de l'algorithme bruteforce est d'ordre exponentiel de type O(2^n^ * `n`), celle de l'algorithme optimisé est d'ordre linéarithmique de type O(`n` log `n`), assurant sa scalabilité pour le traitement d'un nombre important de données
 
@@ -77,25 +77,16 @@ puis :
 
 	git pull https://github.com/AdeVedA/AlgoInvestor--OCR_Mission6 -t main
 
-  #### D - installez un environnement virtuel dans un dossier 'env' du projet, toujours par l'invite de commande :
-	
-	python -m venv env
  
-  #### E - activez l'environnement virtuel créé précédemment :
-	
-	env\Scripts\activate.bat
- 
-  #### F - installez les librairies requises :
-	
-	pip install -r requirements.txt
+  #### D - Lancement du programme :
 
-  #### G - Lancement du programme (l'environnement virtuel doit avoir été activé avant):
+	python bruteforce.py
 
-	python main.py
+ou bien
 
-  #### H - Désactivez l'environnement virtuel
+	python optimized.py
 
-	deactivate
+
 -------------------------
 -------------------------
 
@@ -129,26 +120,13 @@ puis :
 
 	git pull https://github.com/AdeVedA/AlgoInvestor--OCR_Mission6 -t main
 
-  #### D - installez un environnement virtuel dans un dossier 'env' du projet, toujours par le terminal :
-	
-	python3 -m venv env
+  #### G - Lancement du programme:
 
-  #### E - activez l'environnement virtuel créé précédemment :
-	
-	source env/bin/activate
- 
-  #### F - installez les librairies requises :
-	
-	pip install -r requirements.txt
+	python3 bruteforce.py
 
-  #### G - Lancement du programme (l'environnement virtuel doit avoir été activé avant):
+ou bien
 
-	python3 main.py
-
-  #### H - Désactivez l'environnement virtuel
-
-	deactivate
- 
+	python3 optimized.py
 
 ## <p align="center">III - informations sur la structure de données</p>
 
