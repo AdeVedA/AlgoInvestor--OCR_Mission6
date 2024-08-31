@@ -103,8 +103,8 @@ def main():
     share_pack_cost, share_pack_yield, shares_best_pack = optimized_algorithm(shares)
     benchmarking(share_pack_cost, share_pack_yield, dataset)
     print(f"\nL'algorithme optimisé appliqué au dataset n°{dataset} vous propose d'investir sur ce portefeuille d'action : \n")
-    for e in shares_best_pack:
-        print(e)
+    for share in shares_best_pack:
+        print(share)
         
 if __name__ == "__main__":
     main()

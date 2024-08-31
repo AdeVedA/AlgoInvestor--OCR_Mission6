@@ -7,9 +7,7 @@ def get_best_investment(shares_pack_listing):
 
     # itérer sur l'ensemble des packs d'actions et calculer le coût et le rendement de chacun
     for shares_pack in shares_pack_listing:
-        shares_pack_cost = sum(share[1] for share in shares_pack)
-        shares_pack_yield = sum(
-            share[1] * share[2] / 100 for share in shares_pack)
+        shares_pack_yield = sum(share[1] * share[2] / 100 for share in shares_pack)
 
         # trouver le pack qui a le plus haut rendement
         if shares_pack_yield > best_shares_pack_yield:
