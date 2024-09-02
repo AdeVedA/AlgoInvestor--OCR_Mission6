@@ -22,28 +22,37 @@ Le **premier algorithme** est une solution **bruteforce**. Il :
     <img alt="AlgoInvest&Trade logo" src="Datas/diag_bruteforce.png" >
   </picture>
 </p>
+cet algorithme bruteforce :
+
 - lit les données d'un fichier texte fourni (Datas/actions.txt) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
 - génère ensuite toutes les combinaisons possibles d'actions (ou "`shares_pack`") qui respectent la contrainte de budget de 500€ en utilisant la récursivité 
 - compare enfin les rendements et retient la combinaison d'actions ayant le meilleur rendement.
-<br/>
+
 <br/>
 <p align="center"> _____________________________________</p>
 <br/>
 
-Le **second algorithme** est une solution optimisée de type **"algorithme glouton"** tweaké pour être optimimal sur les datasets fournis (datasets1 et dataset2, incluant des données érronées nécessitant un "cleaning") dont la taille rendait le traitement par bruteforce matériellement impossible (1000 actions...). Il :
+Le **second algorithme** est une solution optimisée de type **"algorithme glouton"** tweaké pour être optimimal sur les datasets fournis (datasets1 et dataset2, incluant des données érronées nécessitant un "cleaning") dont la taille rendait le traitement par bruteforce matériellement impossible (1000 actions... impossible sans un ordinateur quantique à 10 QuBits !).
 <p align="center">
   <picture> 
     <img alt="AlgoInvest&Trade logo" src="Datas/diag_optimized.png" >
   </picture>
 </p>
+cet algorithme optimisé :
+
 - lit les données d'un des fichiers csv fourni (Datas/dataset*.csv) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
 - nettoie le dataset (retire la ligne de titre, les actions au coût ou au rendement ≤ 0).
 - effectue un tri sur la liste en fonction du rendement, un filtrage des actions pour optimiser les résultats, une sélection des actions dans l'ordre du tri et un calcul du rendement du portefeuille d'action.
 
-Alors que la complexité de l'algorithme bruteforce est d'ordre exponentiel de type O($2^n * n$), celle de l'algorithme optimisé est d'ordre linéarithmique de type O($n * log n$), assurant sa scalabilité pour le traitement d'un nombre important de données
 
 # <p align="center"> II. Comparatifs de complexité force brute & optimisé</p>
+Alors que la **complexité temporelle** de l'algorithme bruteforce est d'ordre exponentiel de type O($2^n * n$), 
+celle de l'algorithme optimisé est d'ordre linéarithmique de type O(n * $log$  n),
 
+de même alors que la **complexité spatiale** de l'algorithme bruteforce est d'ordre exponentiel de type O($2^n$), 
+celle de l'algorithme optimisé est linéaire de type O(n),
+
+assurant la scalabilité de l'algorithme optimisé pour le traitement d'un nombre important de données
 <p align="center">
     <br/>
     <picture>
