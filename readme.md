@@ -16,14 +16,26 @@
 Il nous a été demandé d'implémenter en python des algorithmes pour la sélection d'actions (avec coût et rendement) dans le but de maximiser le rendement d'un investissement tout en respectant une contrainte de budget de 500€.
 Le but était de comprendre la complexité Big(O) et sa dimension cruciale pour la scalabilité. Nous étions aussi challengés sur la performance de nos résultats en comparaison avec des résultats de référence passés du "client" (challenge ayant motivé le tweaking de notre algorithme optimisé)
 
-Le premier algorithme est une solution bruteforce. Il :
-
+Le **premier algorithme** est une solution **bruteforce**. Il :
+<p align="center">
+  <picture> 
+    <img alt="AlgoInvest&Trade logo" src="Datas/diag_bruteforce.png" >
+  </picture>
+</p>
 - lit les données d'un fichier texte fourni (Datas/actions.txt) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
 - génère ensuite toutes les combinaisons possibles d'actions (ou "`shares_pack`") qui respectent la contrainte de budget de 500€ en utilisant la récursivité 
 - compare enfin les rendements et retient la combinaison d'actions ayant le meilleur rendement.
+<br/>
+<br/>
+<p align="center"> _____________________________________</p>
+<br/>
 
-Le second algorithme est une solution optimisée de type "algorithme glouton" tweaké pour être optimimal sur les datasets fournis (datasets1 et dataset2, incluant des données érronées pour nécessiter un "cleaning") dont la taille rendait le traitement par bruteforce matériellement impossible (1000 actions...). Il :
-
+Le **second algorithme** est une solution optimisée de type **"algorithme glouton"** tweaké pour être optimimal sur les datasets fournis (datasets1 et dataset2, incluant des données érronées nécessitant un "cleaning") dont la taille rendait le traitement par bruteforce matériellement impossible (1000 actions...). Il :
+<p align="center">
+  <picture> 
+    <img alt="AlgoInvest&Trade logo" src="Datas/diag_optimized.png" >
+  </picture>
+</p>
 - lit les données d'un des fichiers csv fourni (Datas/dataset*.csv) et convertit ces données en une liste de listes, où chaque sous-liste représente une action avec ses caractéristiques : nom, coût (en euros), rendement (en pourcentage du coût).
 - nettoie le dataset (retire la ligne de titre, les actions au coût ou au rendement ≤ 0).
 - effectue un tri sur la liste en fonction du rendement, un filtrage des actions pour optimiser les résultats, une sélection des actions dans l'ordre du tri et un calcul du rendement du portefeuille d'action.
